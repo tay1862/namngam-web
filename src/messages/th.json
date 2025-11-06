@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "home": "หน้าหลัก",
+    "about": "เกี่ยวกับ",
+    "products": "สินค้า",
+    "articles": "บทความ",
+    "tags": "แท็ก",
+    "contact": "ติดต่อ"
+  },
+  "common": {
+    "readMore": "อ่านเพิ่มเติม",
+    "viewAll": "ดูทั้งหมด",
+    "loading": "กำลังโหลด...",
+    "pleaseWait": "กรุณารอสักครู่",
+    "error": "เกิดข้อผิดพลาด",
+    "save": "บันทึก",
+    "cancel": "ยกเลิก",
+    "delete": "ลบ",
+    "edit": "แก้ไข",
+    "search": "ค้นหา",
+    "filter": "กรอง",
+    "retry": "ลองใหม่"
+  },
+  "product": {
+    "price": "ราคา",
+    "category": "หมวดหมู่",
+    "contactUs": "ติดต่อสอบถาม",
+    "details": "รายละเอียดสินค้า",
+    "featured": "สินค้าแนะนำ",
+    "latest": "สินค้าล่าสุด",
+    "allProducts": "สินค้าทั้งหมด",
+    "description": "สินค้าคุณภาพสำหรับทุกโอกาส",
+    "noProducts": "ไม่มีสินค้าให้เลือก",
+    "noFeaturedProducts": "ไม่มีสินค้าแนะนำ",
+    "whatsappMessage": "สวัสดี ฉันสนใจสินค้าชิ้นนี้"
+  },
+  "article": {
+    "latest": "บทความล่าสุด",
+    "featured": "บทความแนะนำ",
+    "readMore": "อ่านต่อ",
+    "publishedOn": "เผยแพร่เมื่อ",
+    "allArticles": "บทความทั้งหมด",
+    "description": "บทความ ข่าวสาร และเคล็ดลับดีๆ",
+    "noArticles": "ยังไม่มีบทความ",
+    "noArticlesDescription": "บทความ ข่าวสาร และเคล็ดลับดีๆ จะมาเพิ่มเร็วๆ นี้",
+    "readArticleToLearn": "อ่านบทความนี้เพื่อเรียนรู้เพิ่มเติม..."
+  },
+  "contact": {
+    "getInTouch": "ติดต่อเรา",
+    "whatsapp": "WhatsApp",
+    "facebook": "Facebook",
+    "line": "LINE",
+    "phone": "โทรศัพท์",
+    "email": "อีเมล",
+    "whatsappContact": "ติดต่อทาง WhatsApp",
+    "facebookContact": "ติดต่อทาง Facebook Page",
+    "lineContact": "ติดต่อทาง LINE",
+    "phoneContact": "โทรหาเราโดยตรง",
+    "ourAddress": "ที่อยู่ของเรา",
+    "description": "เรายินดีต้อนรับทุกคำถามและข้อเสนอแนะ"
+  },
+  "home": {
+    "welcome": "ยินดีต้อนรับสู่",
+    "hero": {
+      "title": "NAMNGAM ORIGINAL",
+      "subtitle": "คุณภาพและความงามที่แท้จริง"
+    },
+    "products": "สินค้า",
+    "customers": "ลูกค้า",
+    "rating": "คะแนน",
+    "customerRating": "คะแนนจากลูกค้า"
+  },
+  "footer": {
+    "allRightsReserved": "สงวนลิขสิทธิ์",
+    "socialMedia": "โซเชียลมีเดีย"
+  },
+  "faq": {
+    "title": "คำถามที่พบบ่อย",
+    "description": "ค้นหาคำตอบสำหรับคำถามทั่วไปเกี่ยวกับผลิตภัณฑ์และบริการของเรา",
+    "hero": {
+      "title": "เราสามารถช่วยคุณอย่างไร?",
+      "description": "ค้นหาคำตอบในส่วนคำถามที่พบบ่อยของเรา"
+    },
+    "search": {
+      "placeholder": "ค้นหาคำถาม..."
+    },
+    "categories": {
+      "all": "หมวดหมู่ทั้งหมด"
+    },
+    "noResults": "ไม่พบคำถามที่ตรงกับการค้นหาของคุณ",
+    "noFaqs": "ไม่มีคำถามที่พบบ่อยในขณะนี้",
+    "stillHaveQuestions": "ยังมีคำถามอื่นๆ อีกหรือไม่?",
+    "viewAll": "ดูคำถามทั้งหมด"
+  },
+  "about": {
+    "title": "เกี่ยวกับเรา",
+    "description": "เรียนรู้เพิ่มเติมเกี่ยวกับเรื่องราวและพันธกิจของเรา"
+  },
+  "error": {
+    "home": "หน้าหลัก",
+    "notFound": "ไม่พบหน้า",
+    "notFoundDescription": "หน้าที่คุณกำลังมองหาไม่มีอยู่หรือถูกย้ายไปแล้ว",
+    "pageNotFound": "ไม่พบหน้า",
+    "pageNotFoundDescription": "เราไม่พบหน้าที่คุณกำลังมองหา หน้าอาจถูกลบ เปลี่ยนชื่อ หรือไม่สามารถใช้งานได้ชั่วคราว",
+    "goHome": "กลับหน้าหลัก",
+    "browseProducts": "ดูสินค้า",
+    "lookingFor": "คุณกำลังมองหาอะไร?",
+    "ourProducts": "สินค้าของเรา",
+    "browseOurCollection": "ดูคอลเลกชันสินค้าคุณภาพของเรา",
+    "latestArticles": "บทความล่าสุด",
+    "readOurBlog": "อ่านบทความและโพสต์ล่าสุดของเรา",
+    "aboutUs": "เกี่ยวกับเรา",
+    "learnMoreAboutUs": "เรียนรู้เพิ่มเติมเกี่ยวกับเรื่องราวและพันธกิจของเรา",
+    "contactUs": "ติดต่อเรา",
+    "getInTouch": "ติดต่อกับทีมงานของเรา",
+    "goBack": "กลับ",
+    "serverError": "ข้อผิดพลาดเซิร์ฟเวอร์",
+    "serverErrorDescription": "เรากำลังประสบปัญหาทางเทคนิค โปรดลองใหม่ในอีกสักครู่",
+    "somethingWentWrong": "มีบางอย่างผิดปกติ",
+    "tryAgain": "ลองใหม่",
+    "whatYouCanDo": "สิ่งที่คุณสามารถทำได้",
+    "refreshPage": "รีเฟรชหน้า",
+    "refreshPageDescription": "บางครั้งการรีเฟรชอย่างง่ายสามารถแก้ไขปัญหาได้",
+    "goBackDescription": "กลับไปยังหน้าก่อนหน้า",
+    "tryLater": "ลองใหม่ภายหลัง",
+    "tryLaterDescription": "ปัญหาอาจเป็นชั่วคราว โปรดกลับมาตรวจสอบในภายหลัง",
+    "contactSupport": "ติดต่อฝ่ายสนับสนุน",
+    "contactSupportDescription": "ติดต่อทีมงานของเราเพื่อขอความช่วยเหลือ",
+    "errorPersisting": "หากข้อผิดพลาดยังคงอยู่ โปรดแจ้งให้เราทราบ",
+    "reportError": "รายงานข้อผิดพลาดนี้"
+  },
+  "accessibility": {
+    "skipToMain": "ข้ามไปยังเนื้อหาหลัก",
+    "skipToNav": "ข้ามไปยังเมนู",
+    "menuOpen": "เปิดเมนู",
+    "menuClose": "ปิดเมนู",
+    "loading": "กำลังโหลด",
+    "error": "ข้อผิดพลาด",
+    "success": "สำเร็จ",
+    "warning": "คำเตือน",
+    "info": "ข้อมูล"
+  }
+}

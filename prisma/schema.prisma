@@ -1,0 +1,404 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String    @id @default(cuid())
+  email       String    @unique
+  password    String
+  name        String
+  role        UserRole  @default(ADMIN)
+  isActive    Boolean   @default(true)
+  lastLoginAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  articles    Article[]
+  products    Product[]
+
+  @@index([email])
+}
+
+model Category {
+  id             String    @id @default(cuid())
+  slug           String    @unique
+  name_lo        String
+  name_th        String
+  name_zh        String
+  name_en        String
+  description_lo String?
+  description_th String?
+  description_zh String?
+  description_en String?
+  image          String?
+  order          Int       @default(0)
+  isActive       Boolean   @default(true)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  products       Product[]
+
+  @@index([slug])
+  @@index([isActive])
+}
+
+model Product {
+  id             String         @id @default(cuid())
+  slug           String         @unique
+  name_lo        String
+  name_th        String
+  name_zh        String
+  name_en        String
+  description_lo String
+  description_th String
+  description_zh String
+  description_en String
+  price          Decimal?       @db.Decimal(10, 2)
+  currency       String         @default("LAK")
+  sku            String?        @unique
+  featuredImage  String?
+  categoryId     String
+  metaTitle_lo   String?
+  metaTitle_th   String?
+  metaTitle_zh   String?
+  metaTitle_en   String?
+  metaDesc_lo    String?
+  metaDesc_th    String?
+  metaDesc_zh    String?
+  metaDesc_en    String?
+  isPublished    Boolean        @default(true)
+  isFeatured     Boolean        @default(false)
+  order          Int            @default(0)
+  publishedAt    DateTime?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  createdById    String
+  category       Category       @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  createdBy      User           @relation(fields: [createdById], references: [id])
+  images         ProductImage[]
+
+  @@index([slug])
+  @@index([categoryId])
+  @@index([isPublished])
+  @@index([isFeatured])
+}
+
+model ProductImage {
+  id        String   @id @default(cuid())
+  productId String
+  url       String
+  alt_lo    String?
+  alt_th    String?
+  alt_zh    String?
+  alt_en    String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+}
+
+model Article {
+  id            String       @id @default(cuid())
+  slug          String       @unique
+  title_lo      String
+  title_th      String
+  title_zh      String
+  title_en      String
+  excerpt_lo    String?
+  excerpt_th    String?
+  excerpt_zh    String?
+  excerpt_en    String?
+  content_lo    Json
+  content_th    Json
+  content_zh    Json
+  content_en    Json
+  featuredImage String?
+  imageAlt_lo   String?
+  imageAlt_th   String?
+  imageAlt_zh   String?
+  imageAlt_en   String?
+  metaTitle_lo  String?
+  metaTitle_th  String?
+  metaTitle_zh  String?
+  metaTitle_en  String?
+  metaDesc_lo   String?
+  metaDesc_th   String?
+  metaDesc_zh   String?
+  metaDesc_en   String?
+  isPublished   Boolean      @default(false)
+  isFeatured    Boolean      @default(false)
+  viewCount     Int          @default(0)
+  publishedAt   DateTime?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  createdById   String
+  createdBy     User         @relation(fields: [createdById], references: [id])
+  tags          ArticleTag[]
+
+  @@index([slug])
+  @@index([isPublished])
+  @@index([publishedAt])
+}
+
+model Tag {
+  id        String       @id @default(cuid())
+  name_lo   String       @unique
+  name_th   String
+  name_zh   String
+  name_en   String
+  slug      String       @unique
+  createdAt DateTime     @default(now())
+  articles  ArticleTag[]
+
+  @@index([slug])
+}
+
+model ArticleTag {
+  articleId String
+  tagId     String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, tagId])
+  @@index([articleId])
+  @@index([tagId])
+}
+
+model SiteSettings {
+  id                    String   @id @default("site_settings")
+  siteName_lo           String   @default("NAMNGAM")
+  siteName_th           String   @default("NAMNGAM")
+  siteName_zh           String   @default("NAMNGAM")
+  siteName_en           String   @default("NAMNGAM")
+  logo                  String?
+  favicon               String?
+  homeBg                String?
+  aboutBg               String?
+  productsBg            String?
+  articlesBg            String?
+  heroWelcome_lo        String?  @default("ຍິນດີຕ້ອນຮັບສູ່")
+  heroWelcome_th        String?  @default("ยินดีต้อนรับสู่")
+  heroWelcome_zh        String?  @default("欢迎来到")
+  heroWelcome_en        String?  @default("Welcome to")
+  heroTitle_lo          String?  @default("NAMNGAM ORIGINAL")
+  heroTitle_th          String?  @default("NAMNGAM ORIGINAL")
+  heroTitle_zh          String?  @default("NAMNGAM ORIGINAL")
+  heroTitle_en          String?  @default("NAMNGAM ORIGINAL")
+  heroSubtitle_lo       String?  @default("ຄຸນນະພາບ ແລະ ຄວາມງາມທີ່ແທ້ຈິງ")
+  heroSubtitle_th       String?  @default("คุณภาพและความงามที่แท้จริง")
+  heroSubtitle_zh       String?  @default("真正的品质与美丽")
+  heroSubtitle_en       String?  @default("Quality & Beauty")
+  heroBadgeImage        String?
+  heroBadgeText_lo      String?  @default("Available Now")
+  heroBadgeText_th      String?  @default("Available Now")
+  heroBadgeText_zh      String?  @default("Available Now")
+  heroBadgeText_en      String?  @default("Available Now")
+  heroDesignImage       String?
+  email                 String?
+  phone                 String?
+  address_lo            String?
+  address_th            String?
+  address_zh            String?
+  address_en            String?
+  whatsapp              String?
+  whatsappMessage_lo    String?
+  whatsappMessage_th    String?
+  whatsappMessage_zh    String?
+  whatsappMessage_en    String?
+  facebookPage          String?
+  lineId                String?
+  defaultMetaDesc_lo    String?
+  defaultMetaDesc_th    String?
+  defaultMetaDesc_zh    String?
+  defaultMetaDesc_en    String?
+  googleAnalyticsId     String?
+  facebookPixelId       String?
+  isUnderMaintenance    Boolean  @default(false)
+  maintenanceMessage_lo String?
+  maintenanceMessage_th String?
+  maintenanceMessage_zh String?
+  maintenanceMessage_en String?
+  updatedAt             DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+model QuickLink {
+  id        String   @id @default(cuid())
+  type      LinkType
+  label_lo  String
+  label_th  String
+  label_zh  String
+  label_en  String
+  url       String
+  icon      String?
+  color     String?
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([isActive, order])
+}
+
+model HomeSection {
+  id              String      @id @default(cuid())
+  type            SectionType
+  title_lo        String
+  title_th        String
+  title_zh        String
+  title_en        String
+  subtitle_lo     String?
+  subtitle_th     String?
+  subtitle_zh     String?
+  subtitle_en     String?
+  content_lo      Json?
+  content_th      Json?
+  content_zh      Json?
+  content_en      Json?
+  backgroundImage String?
+  order           Int         @default(0)
+  isActive        Boolean     @default(true)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([isActive, order])
+}
+
+model FAQ {
+  id          String       @id @default(cuid())
+  question_lo String
+  question_th String
+  question_zh String
+  question_en String
+  answer_lo   String
+  answer_th   String
+  answer_zh   String
+  answer_en   String
+  categoryId  String?
+  order       Int          @default(0)
+  isActive    Boolean      @default(true)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  category    FAQCategory? @relation(fields: [categoryId], references: [id])
+
+  @@index([categoryId])
+  @@index([isActive])
+  @@index([order])
+}
+
+model FAQCategory {
+  id             String   @id @default(cuid())
+  name_lo        String
+  name_th        String
+  name_zh        String
+  name_en        String
+  description_lo String?
+  description_th String?
+  description_zh String?
+  description_en String?
+  order          Int      @default(0)
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  faqs           FAQ[]
+
+  @@index([isActive])
+  @@index([order])
+}
+
+model AboutPage {
+  id                 String       @id @default("about_page")
+  title_lo           String       @default("ກ່ຽວກັບ NAMNGAM")
+  title_th           String       @default("เกี่ยวกับ NAMNGAM")
+  title_zh           String       @default("关于 NAMNGAM")
+  title_en           String       @default("About NAMNGAM")
+  storyTitle_lo      String       @default("ເລື່ອງລາວຂອງພວກເຮົາ")
+  storyTitle_th      String       @default("เรื่องราวของเรา")
+  storyTitle_zh      String       @default("我们的故事")
+  storyTitle_en      String       @default("Our Story")
+  storyParagraph1_lo String?
+  storyParagraph1_th String?
+  storyParagraph1_zh String?
+  storyParagraph1_en String?
+  storyParagraph2_lo String?
+  storyParagraph2_th String?
+  storyParagraph2_zh String?
+  storyParagraph2_en String?
+  backgroundImage    String?
+  updatedAt          DateTime     @updatedAt
+  values             AboutValue[]
+
+  @@map("about_page")
+}
+
+model AboutValue {
+  id             String    @id @default(cuid())
+  aboutPageId    String    @default("about_page")
+  icon           String?
+  title_lo       String
+  title_th       String
+  title_zh       String
+  title_en       String
+  description_lo String?
+  description_th String?
+  description_zh String?
+  description_en String?
+  order          Int       @default(0)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  aboutPage      AboutPage @relation(fields: [aboutPageId], references: [id], onDelete: Cascade)
+
+  @@index([order])
+}
+
+model Media {
+  id           String   @id @default(cuid())
+  filename     String
+  originalName String
+  mimeType     String
+  size         Int
+  url          String
+  path         String
+  alt_lo       String?
+  alt_th       String?
+  alt_zh       String?
+  alt_en       String?
+  width        Int?
+  height       Int?
+  folder       String?
+  uploadedAt   DateTime @default(now())
+
+  @@index([folder])
+  @@index([uploadedAt])
+}
+
+enum UserRole {
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+}
+
+enum LinkType {
+  WHATSAPP
+  FACEBOOK
+  LINE
+  PHONE
+  EMAIL
+  TELEGRAM
+  WECHAT
+  CUSTOM
+}
+
+enum SectionType {
+  HERO
+  ABOUT
+  PRODUCTS
+  ARTICLES
+  CONTACT
+  CUSTOM
+}

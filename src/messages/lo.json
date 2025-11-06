@@ -1,0 +1,146 @@
+{
+  "nav": {
+    "home": "ໜ້າຫຼັກ",
+    "about": "ກ່ຽວກັບ",
+    "products": "ສິນຄ້າ",
+    "articles": "ບົດຄວາມ",
+    "tags": "ເປົ້າໝາຍ",
+    "contact": "ຕິດຕໍ່"
+  },
+  "common": {
+    "readMore": "ອ່ານເພີ່ມເຕີມ",
+    "viewAll": "ເບິ່ງທັງຫມົດ",
+    "loading": "ກຳລັງໂຫຼດ...",
+    "pleaseWait": "ກະລຸນາລໍຖ້າສັກຄູ່",
+    "error": "ເກີດຂໍ້ຜິດພາດ",
+    "save": "ບັນທຶກ",
+    "cancel": "ຍົກເລີກ",
+    "delete": "ລຶບ",
+    "edit": "ແກ້ໄຂ",
+    "search": "ຄົ້ນຫາ",
+    "filter": "ກັ່ນຕອງ",
+    "retry": "ລອງໃໝ່"
+  },
+  "product": {
+    "price": "ລາຄາ",
+    "category": "ໝວດໝູ່",
+    "contactUs": "ຕິດຕໍ່ສອບຖາມ",
+    "details": "ລາຍລະອຽດສິນຄ້າ",
+    "featured": "ສິນຄ້າແນະນຳ",
+    "latest": "ສິນຄ້າຫຼ້າສຸດ",
+    "allProducts": "ສິນຄ້າທັງໝົດ",
+    "description": "ສິນຄ້າຄຸນນະພາບດີ ສຳລັບທຸກທ່ານ",
+    "noProducts": "ຍັງບໍ່ມີສິນຄ້າ",
+    "noFeaturedProducts": "ຍັງບໍ່ມີສິນຄ້າແນະນຳ",
+    "whatsappMessage": "ສະບາຍດີ, ຂ້ອຍສົນໃຈສິນຄ້ານີ້",
+    "nav": {
+      "home": "ໜ້າຫຼັກ"
+    }
+  },
+  "article": {
+    "latest": "ບົດຄວາມຫຼ້າສຸດ",
+    "featured": "ບົດຄວາມແນະນຳ",
+    "readMore": "ອ່ານຕໍ່",
+    "publishedOn": "ເຜີຍແຜ່ເມື່ອ",
+    "allArticles": "ບົດຄວາມທັງໝົດ",
+    "description": "ບົດຄວາມ ຂ່າວສານ ແລະ ເຄັດລັບດີໆ",
+    "noArticles": "ຍັງບໍ່ມີບົດຄວາມ",
+    "noArticlesDescription": "ບົດຄວາມ ຂ່າວສານ ແລະ ເຄັດລັບດີໆ ກຳລັງມາເພີ່ມເລີຍ",
+    "readArticleToLearn": "ອ່ານບົດຄວາມນີ້ເພື່ອຮຽນຮູ້ເພີ່ມເຕີມ..."
+  },
+  "contact": {
+    "getInTouch": "ຕິດຕໍ່ພວກເຮົາ",
+    "whatsapp": "WhatsApp",
+    "facebook": "Facebook",
+    "line": "LINE",
+    "phone": "ໂທລະສັບ",
+    "email": "ອີເມລ",
+    "whatsappContact": "ຕິດຕໍ່ທາງ WhatsApp",
+    "facebookContact": "ຕິດຕໍ່ທາງ Facebook Page",
+    "lineContact": "ຕິດຕໍ່ທາງ LINE",
+    "phoneContact": "ໂທຫາພວກເຮົາໂດຍກົງ",
+    "ourAddress": "ທີ່ຢູ່ຂອງພວກເຮົາ",
+    "description": "ພວກເຮົາຍິນດີຕ້ອນຮັບທຸກຄຳຖາມ ແລະ ຂໍ້ສະເໜີແນະ"
+  },
+  "home": {
+    "welcome": "ຍິນດີຕ້ອນຮັບສູ່",
+    "hero": {
+      "title": "NAMNGAM ORIGINAL",
+      "subtitle": "ຄຸນນະພາບ ແລະ ຄວາມງາມທີ່ແທ້ຈິງ"
+    },
+    "products": "ສິນຄ້າ",
+    "customers": "ລູກຄ້າ",
+    "rating": "ຄະແນນ",
+    "customerRating": "ຄະແນນຈາກລູກຄ້າ"
+  },
+  "footer": {
+    "allRightsReserved": "ສະຫງວນວນລິຂະສິດ",
+    "socialMedia": "ໂຊຊຽວມີເດຍ"
+  },
+  "faq": {
+    "title": "ຄຳຖາມທີ່ພົບເລື່ອຍໆ",
+    "description": "ຄົ້ນຫາຄຳຕອບສຳຫຼັບຄຳຖາມທົ່ວໄປກັບຜະລິດພັນຂອງພວກເຮົາ",
+    "hero": {
+      "title": "ເຮົາສາມາດຊ່ວຍທ່ານອັນໃດແນ່?",
+      "description": "ຄົ້ນຫາຄຳຕອບໃນສ່ວນຄຳຖາມທີ່ພົບບ່ອຍຂອງເຮົາ"
+    },
+    "search": {
+      "placeholder": "ຄົ້ນຫາຄຳຖາມ..."
+    },
+    "categories": {
+      "all": "ໝວດໝູ່ທັງໝົດ"
+    },
+    "noResults": "ບໍ່ພົບຄຳຖາມທີ່ຕົງກັບການຄົ້ນຫາຂອງທ່ານ",
+    "noFaqs": "ບໍ່ມີຄຳຖາມທີ່ພົບບ່ອຍໃນຂະນະນີ້",
+    "stillHaveQuestions": "ຍັງມີຄຳຖາມອື່ນໆ ອີກ ຫຼື ບໍ?",
+    "viewAll": "ເບິ່ງຄຳຖາມທັງໝົດ"
+  },
+  "about": {
+    "title": "ກ່ຽວກັບ",
+    "description": "ເພີ່ມເຕີມກ່ຽວກັບຄວາມເປັນມາແລະພາລະກິດຂອງພວກເຮົາ"
+  },
+  "error": {
+    "home": "ໜ້າຫຼັກ",
+    "notFound": "ບໍ່ພົບໜ້າ",
+    "notFoundDescription": "ໜ້າທີ່ທ່ານກຳລັງຊອກຫາບໍ່ມີຢູ່ ຫຼືຖືກຍ້າຍໄປແລ້ວ",
+    "pageNotFound": "ບໍ່ພົບໜ້າ",
+    "pageNotFoundDescription": "ພວກເຮົາບໍ່ສາມາດຊອກຫາໜ້າທີ່ທ່ານກຳລັງຊອກຫາ. ໜ້າອາຈຖືກລຶບ, ປ່ຽນຊື່, ຫຼືບໍ່ສາມາດໃຊ້ງານໄດ້ຊົ່ວຄຣາວ.",
+    "goHome": "ກັບໜ້າຫຼັກ",
+    "browseProducts": "ເບິ່ງສິນຄ້າ",
+    "lookingFor": "ທ່ານກຳລັງຊອກຫາຫຍັງ?",
+    "ourProducts": "ສິນຄ້າຂອງພວກເຮົາ",
+    "browseOurCollection": "ເບິ່ງຄອນເລັກຊັນສິນຄ້າຄຸນນະພາບຂອງພວກເຮົາ",
+    "latestArticles": "ບົດຄວາມຫຼ້າສຸດ",
+    "readOurBlog": "ອ່ານບົດຄວາມ ແລະ ໂພສຕ໌ຫຼ້າສຸດຂອງພວກເຮົາ",
+    "aboutUs": "ກ່ຽວກັບ",
+    "learnMoreAboutUs": "ເພີ່ມເຕີມກ່ຽວກັບຄວາມເປັນມາແລະພາລະກິດຂອງພວກເຮົາ",
+    "contactUs": "ຕິດຕໍ່ພວກເຮົາ",
+    "getInTouch": "ຕິດຕໍ່ກັບທີມງານຂອງພວກເຮົາ",
+    "goBack": "ກັບ",
+    "serverError": "ຂໍ້ຜິດພາດເຊີຟເວີ",
+    "serverErrorDescription": "ພວກເຮົາກຳລັງປະສົບບັນຫາທາງດ້ານເທັກນິກ. ກະລຸນາລອງໃໝ່ອີກຄືນໃນອີກສອງຄຣາວ.",
+    "somethingWentWrong": "ມີບາງຢ່າງຜິດພາດປົກຕິ",
+    "tryAgain": "ລອງໃໝ່",
+    "whatYouCanDo": "ສິ່ງທີ່ທ່ານສາມາດເຮັດໄດ້",
+    "refreshPage": "ຣີເຟຣຊໜ້າ",
+    "refreshPageDescription": "ບາງຄັນການຣີເຟຣຊງ່າງງ່າຍສາມາດແກ້ໄຂ້",
+    "goBackDescription": "ກັບໄປຍັງໜ້າກ່ອນໜ້າ",
+    "tryLater": "ລອງໃໝ່ພາຍຫຼັງ",
+    "tryLaterDescription": "ບັນຫາອາຈເປັນຊົ່ວຄຣາວ, ກະລຸນາກັບມາກວດສອບໃນພາຍຫຼັງ",
+    "contactSupport": "ຕິດຕໍ່ຝ່າຍສະໜັນສະນັກ",
+    "contactSupportDescription": "ຕິດຕໍ່ກັບທີມງານຂອງພວກເຮົາເພື່ອຮັບຄວາມຊ່ວຍເຫຼື",
+    "errorPersisting": "ຖ້າຂໍ້ຜິດພາດຍັງຄົງຢູ່, ກະລຸນາແຈ້ງໃຫ້ພວກເຮົາຮູ້",
+    "reportError": "ລາຍງານຂໍ້ຜິດພາດນີ້"
+  },
+  "accessibility": {
+    "skipToMain": "ຂ້ານໄປ້າຍື້ານຫຼັກ",
+    "skipToNav": "ຂ້ານໄປ້າຍື້ານເມນູ່",
+    "menuOpen": "ເປີດເມນູ່",
+    "menuClose": "ປິດເມນູ່",
+    "loading": "ກຳລັງໂຫຼດ",
+    "error": "ຂໍ້ຜິດພາດ",
+    "success": "ສຳເລັດ",
+    "warning": "ຄຳເຕື່ນ",
+    "info": "ຂໍ້ມູນ"
+  }
+}

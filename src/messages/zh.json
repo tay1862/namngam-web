@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "products": "产品",
+    "articles": "文章",
+    "tags": "标签",
+    "contact": "联系我们"
+  },
+  "common": {
+    "readMore": "阅读更多",
+    "viewAll": "查看全部",
+    "loading": "加载中...",
+    "error": "出错了",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "search": "搜索",
+    "filter": "筛选",
+    "retry": "重试"
+  },
+  "product": {
+    "price": "价格",
+    "category": "分类",
+    "contactUs": "联系咨询",
+    "details": "产品详情",
+    "featured": "推荐产品",
+    "latest": "最新产品",
+    "allProducts": "所有产品",
+    "description": "适合各种场合的优质产品",
+    "noProducts": "暂无产品",
+    "noFeaturedProducts": "暂无推荐产品",
+    "whatsappMessage": "您好，我对这个产品感兴趣"
+  },
+  "article": {
+    "latest": "最新文章",
+    "featured": "推荐文章",
+    "readMore": "继续阅读",
+    "publishedOn": "发布于",
+    "allArticles": "所有文章",
+    "description": "文章、新闻和精彩技巧",
+    "noArticles": "暂无文章",
+    "noArticlesDescription": "文章、新闻和精彩技巧即将推出",
+    "readArticleToLearn": "阅读本文以了解更多..."
+  },
+  "contact": {
+    "getInTouch": "联系我们",
+    "whatsapp": "WhatsApp",
+    "facebook": "Facebook",
+    "line": "LINE",
+    "phone": "电话",
+    "email": "邮箱",
+    "whatsappContact": "通过WhatsApp联系",
+    "facebookContact": "通过Facebook页面联系",
+    "lineContact": "通过LINE联系",
+    "phoneContact": "直接致电我们",
+    "ourAddress": "我们的地址",
+    "description": "我们欢迎所有问题和建议"
+  },
+  "home": {
+    "welcome": "欢迎来到",
+    "hero": {
+      "title": "NAMNGAM ORIGINAL",
+      "subtitle": "真正的质量与美丽"
+    },
+    "products": "产品",
+    "customers": "客户",
+    "rating": "评分",
+    "customerRating": "客户评分"
+  },
+  "footer": {
+    "allRightsReserved": "版权所有",
+    "socialMedia": "社交媒体"
+  },
+  "faq": {
+    "title": "常见问题",
+    "description": "查找有关我们产品和服务的常见问题的答案",
+    "hero": {
+      "title": "我们如何帮助您？",
+      "description": "浏览我们的常见问题解答部分，找到您问题的答案。"
+    },
+    "search": {
+      "placeholder": "搜索问题..."
+    },
+    "categories": {
+      "all": "所有分类"
+    },
+    "noResults": "未找到与您搜索匹配的问题。",
+    "noFaqs": "目前没有常见问题。",
+    "stillHaveQuestions": "还有其他问题吗？",
+    "viewAll": "查看所有常见问题"
+  },
+  "about": {
+    "title": "关于我们",
+    "description": "了解更多关于我们的故事和使命"
+  }
+}

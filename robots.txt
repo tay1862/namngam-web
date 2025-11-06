@@ -1,0 +1,64 @@
+# SEO-optimized robots.txt for Namngam website
+# https://www.namngam.com
+
+User-agent: *
+Allow: /
+
+# Priority pages to crawl
+Allow: /about/
+Allow: /articles/
+Allow: /products/
+Allow: /contact/
+Allow: /faq/
+Allow: /tags/
+
+# Block admin and sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /uploads/
+Disallow: /temp/
+Disallow: /cache/
+
+# Block dynamic parameters and files
+Disallow: /*.json$
+Disallow: /*?*$
+Disallow: /search/
+Disallow: /preview/
+
+# Block common bot paths
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+
+# Special rules for specific bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://www.namngam.com/sitemap.xml
+
+# Host directive (for Yandex)
+Host: www.namngam.com
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
