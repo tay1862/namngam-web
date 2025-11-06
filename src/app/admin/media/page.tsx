@@ -367,6 +367,11 @@ export default function MediaLibraryPage() {
                             src={item.url}
                             alt={item.alt_en || item.originalName}
                             className="w-full h-32 object-cover"
+                            onError={(e) => {
+                              // Fallback for broken images
+                              const target = e.target as HTMLImageElement;
+                              target.src = '/placeholder-image.svg';
+                            }}
                           />
                         </div>
                       ) : (

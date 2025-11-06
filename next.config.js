@@ -28,6 +28,15 @@ const nextConfig = {
       bodySizeLimit: '10mb',
     },
   },
+  // Add static file handling for uploaded images
+  async rewrites() {
+    return [
+      {
+        source: '/uploads/:path*',
+        destination: '/api/uploads/:path*',
+      },
+    ];
+  },
 };
 
 module.exports = withNextIntl(nextConfig);

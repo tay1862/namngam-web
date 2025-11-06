@@ -37,14 +37,17 @@ export default function OptimizedImage({
   onLoad,
   onError,
   style,
-  unoptimized = false,
+  unoptimized = true, // Default to unoptimized for uploaded images
   ...props
 }: OptimizedImageProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  // Check if it's an uploaded image
+  const isUploadedImage = src.includes('/uploads/');
+  
   // Generate optimized image URL
-  const optimizedSrc = unoptimized ? src : getOptimizedImageUrl(src, width, height, quality);
+  const optimizedSrc = unoptimized || isUploadedImage ? src : getOptimizedImageUrl(src, width, height, quality);
 
   // Handle load event
   const handleLoad = () => {
