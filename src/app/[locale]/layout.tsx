@@ -1,82 +1,48 @@
-import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
-import { Toaster } from 'react-hot-toast';
+import { getLocalizedContent } from '@/lib/i18n-helpers';
+import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import QuickLinks from '@/components/layout/QuickLinks';
-import DynamicFavicon from '@/components/layout/DynamicFavicon';
-import { LoadingProvider } from '@/lib/loading-context';
-import GlobalLoader from '@/components/layout/GlobalLoader';
-import WebVitalsTracker from '@/components/analytics/WebVitalsTracker';
-import AccessibilityInitializer from '@/components/accessibility/AccessibilityInitializer';
+import '../../styles/globals.css';
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
+import StructuredData, { OrganizationStructuredData } from '@/components/seo/StructuredData';
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
-export default async function LocaleLayout({
+export default function LocaleLayout({
   children,
-  params: { locale },
+  params: { locale }
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  if (!locales.includes(locale as any)) {
-    notFound();
-  }
+  // Validate locale
+  if (!locales.includes(locale as any)) notFound();
 
-  let messages;
-  try {
-    messages = (await import(`@/messages/${locale}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
+  const messages = getLocalizedContent({
+    en: require(`../../messages/en.json`),
+    lo: require(`../../messages/lo.json`),
+    th: require(`../../messages/th.json`),
+    zh: require(`../../messages/zh.json`),
+  }, locale as 'en' | 'lo' | 'th' | 'zh');
 
   return (
-    <html lang={locale === 'lo' ? 'lo-LA' : locale}>
+    <html lang={locale}>
       <head>
-        <meta charSet="utf-8" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
-        <DynamicFavicon />
+        <GoogleAnalytics />
+        <OrganizationStructuredData 
+          data={{
+            name: 'NAMNGAM',
+            url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3001'}/${locale}`,
+            logo: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3001'}/logo.png`,
+            description: 'Premium quality products and beauty items',
+            sameAs: [
+              process.env.NEXT_PUBLIC_SITE_URL,
+            ],
+          }} 
+        />
       </head>
-      <body>
-        <LoadingProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <WebVitalsTracker enableDebug={process.env.NODE_ENV === 'development'} />
-            <AccessibilityInitializer />
-            <Navbar />
-            <main id="main-content" className="min-h-screen" role="main">{children}</main>
-            <Footer />
-            <QuickLinks />
-            <GlobalLoader />
-            <Toaster
-              position="top-right"
-              toastOptions={{
-                duration: 3000,
-                style: {
-                  background: '#fff',
-                  color: '#171717',
-                  borderRadius: '12px',
-                  padding: '16px',
-                },
-                success: {
-                  iconTheme: {
-                    primary: '#10B981',
-                    secondary: '#fff',
-                  },
-                },
-                error: {
-                  iconTheme: {
-                    primary: '#EF4444',
-                    secondary: '#fff',
-                  },
-                },
-              }}
-            />
-          </NextIntlClientProvider>
-        </LoadingProvider>
+      <body className="min-h-screen">
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
